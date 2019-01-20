@@ -6,8 +6,20 @@
 
 // expressモジュールを読み込む
 var express = require('express');
-// expressアプリを生成する
 var app = express();
+
+var session = require('express-session');
+var sessionMiddleware = session({
+	secret: '3efvbmju48z',
+	resave: false,
+	saveUninitialized: false,
+	cookie:{
+		httpOnly: false,
+		secure: true,
+		// 1秒 * 60(1分) * 60(1時間) * 24(1日) * 10日保存する。
+		maxage: 1000 * 60 * 60 * 24 * 10
+	}
+});
 
 
 // 静的ファイルの場所指定
