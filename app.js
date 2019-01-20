@@ -5,14 +5,24 @@
 */
 
 // expressモジュールを読み込む
-const express = require('express');
-
+var express = require('express');
 // expressアプリを生成する
-const app = express();
+var app = express();
 
 
 // 静的ファイルの場所指定
 app.use(express.static('static-files'));
+
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+	res.send('Error');
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+	res.send('Error 2');
+});
 
 
 // サーバーの起動
