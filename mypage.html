@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<title>Flowers, ink - It's a simple communication tool.</title>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<style>
+	.icon-block {
+		padding: 0 15px;
+	}
+	.icon-block .material-icons {
+		font-size: inherit;
+	}
+	</style>
+</head>
+<body class="blue lighten-5">
+	<nav class="lime accent-3" role="navigation">
+		<div class="nav-wrapper container">
+			<a id="logo-container" href="index.html" class="brand-logo"><i class="large material-icons">local_airport</i></a>
+
+			<ul class="right hide-on-med-and-down">
+				<li><a class="waves-effect waves-light btn red accent-3" href="share.html">Share</a></li>
+				<li><a class="waves-effect waves-light btn indigo accent-3" href="login.html">Logout</a></li>
+			</ul>
+
+			<ul id="nav-mobile" class="sidenav">
+				<li class="center teal-text"><i class="large material-icons">local_airport</i>Flowers, ink</li>
+				<li><a class="waves-effect waves-light btn red accent-3" href="share.html">Share</a></li>
+				<li><a class="waves-effect waves-light btn indigo accent-3" href="login.html">Logout</a></li>
+			</ul>
+			<a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+		</div>
+	</nav>
+
+
+	<div class="section yellow lighten-5">
+		<div class="container center">
+			<p>Welcome [usr-id] !</p>
+			<form class="col s12" action="post.php" method="post">
+				<div class="input-field col s12">
+					<textarea id="usr-post-data" class="materialize-textarea" data-length="360"></textarea>
+					<label for="usr-post-data">Let's write everything !</label>
+
+					<input class="btn-flat btn-large lime accent-3" type="submit" value="Post">
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+	<div class="section center yellow lighten-4">
+		<div class="container">
+<div class="card">
+	<div class="card-content">
+		<p>This sample text and Maybe it's will be this app design.</p>
+		<small>2019/1/20 12:14:45</small>
+	</div>
+</div>
+
+<div class="card">
+	<div class="card-content">
+		<p>これはサンプルのデザインだ。</p>
+		<small>2019/1/20 12:14:45</small>
+	</div>
+</div>
+		</div>
+
+
+		<ul class="collection">
+			<li class="collection-item amber lighten-5">Alvin</li>
+			<li class="collection-item amber lighten-4">Alvin</li>
+			<li class="collection-item amber lighten-3">Alvin</li>
+			<li class="collection-item amber lighten-2">Alvin</li>
+			<li class="collection-item amber lighten-1">Alvin</li>
+		</ul>
+	</div>
+
+
+	<footer class="page-footer blue lighten-3">
+		<div class="footer-copyright blue lighten-2">
+			<div class="container">
+				(C) 2019 Jskny.<br>
+				Powered by <a class="yellow-text lighten-2" href="https://sysrigar.com">Sysrigar</a>.
+			</div>
+		</div>
+		<br>
+	</footer>
+
+
+	<script
+	  src="https://code.jquery.com/jquery-2.2.4.min.js"
+	  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	  crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="js/init.js"></script>
+
+	<script>
+	// 文字数カウントの有効化
+	$(document).ready(function() {
+		$('#usr-post-data').characterCounter();
+	});
+	</script>
+	</body>
+</html>
