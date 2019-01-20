@@ -1,0 +1,6 @@
+# Gitignore file
+# 2019/1/20
+
+/node_modules/
+
+
