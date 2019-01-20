@@ -1,0 +1,19 @@
+{
+  "name": "flowers-ink",
+  "version": "0.0.1",
+  "description": "It's a simple communication tool.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jskny/flowers-ink.git"
+  },
+  "author": "jskny",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jskny/flowers-ink/issues"
+  },
+  "homepage": "https://github.com/jskny/flowers-ink#readme"
+}
