@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jskny/flowers-ink/issues"
   },
-  "homepage": "https://github.com/jskny/flowers-ink#readme"
+  "homepage": "https://github.com/jskny/flowers-ink#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
