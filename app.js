@@ -5,10 +5,12 @@
 */
 
 // expressモジュールを読み込む
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
-var session = require('express-session');
+var path = require('path');
+
+const session = require('express-session');
 var sessionMiddleware = session({
 	secret: '3efvbmju48z',
 	resave: false,
@@ -22,9 +24,25 @@ var sessionMiddleware = session({
 });
 
 
+// view engine setup
+var ejs = require('ejs');
+// エンジンの設定
+app.engine('ejs', ejs.renderFile);
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+
+// Contorllerの定義
+var index = require('./routes/index');
+
+// Controllerのセット
+app.use('/', index);
+
+
+
 // 静的ファイルの場所指定
 app.use(express.static('static-files'));
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -41,6 +59,7 @@ app.use(function(err, req, res, next) {
 // Heroku 対応のためのポート番号指定については、
 // 下記の記事を参考
 // https://qiita.com/kenju/items/1d61c9fb45496feed1bf
-app.listen(process.env.PORT || 3000);
-console.log("SYSTEM HAS RUNNING.");
+var server = app.listen(process.env.PORT || 3000, function(){
+	console.log('Server is running!');
+});
 
