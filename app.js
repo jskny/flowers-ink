@@ -35,9 +35,15 @@ app.set('view engine', 'ejs');
 
 // Contorllerの定義
 var index = require('./routes/index');
+var login = require('./routes/login');
+var signin = require('./routes/signin');
+var mypage = require('./routes/mypage');
 
 // Controllerのセット
 app.use('/', index);
+app.use('/login', login);
+app.use('/signin', signin);
+app.use('/mypage', mypage);
 
 
 

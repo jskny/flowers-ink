@@ -1,0 +1,68 @@
+﻿<%- include("common-header", { title: "My Page" }); %>
+<nav class="lime accent-3" role="navigation">
+	<div class="nav-wrapper container">
+		<a id="logo-container" href="/" class="brand-logo"><i class="large material-icons">local_airport</i></a>
+
+		<ul class="right hide-on-med-and-down">
+			<li><a class="waves-effect waves-light btn red accent-3" href="share.html">Share</a></li>
+			<li><a class="waves-effect waves-light btn indigo accent-3" href="/loginl">Logout</a></li>
+		</ul>
+
+		<ul id="nav-mobile" class="sidenav">
+			<li class="center teal-text"><i class="large material-icons">local_airport</i>Flowers, ink</li>
+			<li><a class="waves-effect waves-light btn red accent-3" href="share.html">Share</a></li>
+			<li><a class="waves-effect waves-light btn indigo accent-3" href="/login">Logout</a></li>
+		</ul>
+		<a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+	</div>
+</nav>
+
+
+<div class="section yellow lighten-5">
+	<div class="container center">
+		<p>Welcome [usr-id] !</p>
+		<form class="col s12" action="post.php" method="post">
+			<div class="input-field col s12">
+				<textarea id="usr-post-data" class="materialize-textarea" data-length="360"></textarea>
+				<label for="usr-post-data">Let's write everything !</label>
+
+				<input class="btn-flat btn-large lime accent-3" type="submit" value="Post">
+			</div>
+		</form>
+	</div>
+</div>
+
+
+<div class="section center yellow lighten-4">
+	<div class="container">
+<div class="card">
+<div class="card-content">
+	<p>This sample text and Maybe it's will be this app design.</p>
+	<small>2019/1/20 12:14:45</small>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+	<p>これはサンプルのデザインだ。</p>
+	<small>2019/1/20 12:14:45</small>
+</div>
+</div>
+	</div>
+
+
+	<ul class="collection">
+		<li class="collection-item amber lighten-5">Alvin</li>
+		<li class="collection-item amber lighten-4">Alvin</li>
+		<li class="collection-item amber lighten-3">Alvin</li>
+		<li class="collection-item amber lighten-2">Alvin</li>
+		<li class="collection-item amber lighten-1">Alvin</li>
+	</ul>
+</div>
+<script>
+// 文字数カウントの有効化
+$(document).ready(function() {
+	$('#usr-post-data').characterCounter();
+});
+</script>
+<%- include("common-footer"); %>

@@ -1,0 +1,44 @@
+﻿<%- include("common-header", { title: "Sign in" }); %>
+<nav class="lime accent-3" role="navigation">
+	<div class="nav-wrapper container">
+		<a id="logo-container" href="/" class="brand-logo"><i class="large material-icons">local_airport</i>Flowers, ink</a>
+
+		<ul id="nav-mobile" class="sidenav">
+			<li class="center teal-text"><i class="large material-icons">local_airport</i>Flowers, ink</li>
+			<li><a href="/">Home</a></li>
+			<li><a href="/login">Login</a></li>
+			<li><a href="/signin">Signin</a></li>
+		</ul>
+		<a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+	</div>
+</nav>
+<div class="section no-pad-bot blue lighten-5">
+	<div class="container">
+		<h1 class="header center green-text accent-2">Sign in</h1>
+	</div>
+</div>
+
+
+<div class="container">
+	<div class="row">
+		<div class="input-field col s12">
+			<input value="" id="usr-id" type="text" class="validate">
+			<label class="active" for="usr-id">User id</label>
+		</div>
+
+		<div class="input-field col s12">
+			<input value="" id="usr-pass" type="text" class="validate">
+			<label class="active" for="usr-pass">Password</label>
+		</div>
+
+		<div class="row center">
+			<a class="waves-effect waves-light btn-flat btn-large green accent-2" href="#">Sign in</a>
+		</div>
+	</div>
+</div>
+<script>
+$(document).ready(function() {
+	M.updateTextFields();
+});
+</script>
+<%- include("common-footer"); %>
