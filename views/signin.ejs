@@ -32,11 +32,67 @@
 		</div>
 
 		<div class="row center">
-			<a class="waves-effect waves-light btn-flat btn-large green accent-2" href="#">Sign in</a>
+			<span id="btn-signin" class="waves-effect waves-light btn-flat btn-large green accent-2">Sign in</span>
 		</div>
 	</div>
 </div>
 <script>
+// サインイン処理
+$('#btn-signin').on('click', function() {
+	var id = $("#usr-id").val();
+	var pass = $("#usr-pass").val();
+
+	var errMsg = "";
+
+	if (id.length == 0) {
+		errMsg = "User ID is empty.";
+	}
+	else if (id.length > 50){
+		errMsg = "User ID is over 50 character.";
+	}
+
+	if (errMsg.length != 0) {
+		// ユーザーID関連で、 エラーメッセージがセットされているので、通知を出す。
+		M.toast({ html: errMsg, classes: 'rounded' });
+		return;
+	}
+
+
+	if (pass.length == 0) {
+		errMsg = "User Password is empty.";
+	}
+	else if (pass.length < 6) {
+		errMsg = "User Password is less than 6 character.";
+	}
+	else if (pass.length > 50){
+		errMsg = "User Password is over 50 character.";
+	}
+
+	if (errMsg.length != 0) {
+		// パスワード関連でエラーメッセージがセットされているので、通知を出す。
+		M.toast({ html: errMsg, classes: 'rounded' });
+		return;
+	}
+
+
+	// 執行可能なので、通知をすべて消す。
+	M.Toast.dismissAll();
+
+
+	// IDとパスワードをセットしてサーバーに送る。
+	$.post("/signin-add-new-user", {
+		id : id,
+		pass : pass
+		}, function(data) {
+console.log(data);
+			// 送信が成功した場合にコールバックされる。
+			// セッションがセットされている場合は、mypage へ転送しよう。
+			M.toast("add new user finish.");
+		}
+	);
+});
+
+
 $(document).ready(function() {
 	M.updateTextFields();
 });
