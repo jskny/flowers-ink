@@ -21,6 +21,7 @@
 
 <div class="container">
 	<div class="row">
+<form id="form-usr-signin" action="/signin-add-new-user" method="post">
 		<div class="input-field col s12">
 			<input value="" id="usr-id" type="text" class="validate">
 			<label class="active" for="usr-id">User id</label>
@@ -34,6 +35,7 @@
 		<div class="row center">
 			<span id="btn-signin" class="waves-effect waves-light btn-flat btn-large green accent-2">Sign in</span>
 		</div>
+</form>
 	</div>
 </div>
 <script>
@@ -80,16 +82,7 @@ $('#btn-signin').on('click', function() {
 
 
 	// IDとパスワードをセットしてサーバーに送る。
-	$.post("/signin-add-new-user", {
-		id : id,
-		pass : pass
-		}, function(data) {
-console.log(data);
-			// 送信が成功した場合にコールバックされる。
-			// セッションがセットされている場合は、mypage へ転送しよう。
-			M.toast("add new user finish.");
-		}
-	);
+	$("#form-usr-signin").submit();
 });
 
 
