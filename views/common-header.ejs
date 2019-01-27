@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿<%
+// パラメータが渡されなかった場合の初期値セット
+if (typeof title === 'undefined') {
+	title = '';
+} -%>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
