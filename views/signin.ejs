@@ -21,7 +21,7 @@
 
 <div class="container">
 	<div class="row">
-<form id="form-usr-signin" action="/signin-add-user" method="post">
+<form id="form-usr-signin" action="/signin" method="post">
 		<div class="input-field col s12">
 			<input value="" id="usr-id" name="uid" type="text" class="validate">
 			<label class="active" for="usr-id">User id</label>
@@ -88,6 +88,11 @@ $('#btn-signin').on('click', function() {
 
 $(document).ready(function() {
 	M.updateTextFields();
+
+<%	// サーバーからの応答の値がセットされている場合、通知を出す。
+	if (typeof msg !== 'undefined') { -%>
+	M.toast({ html: '<%= msg %>', classes: 'rounded' });
+<%	} -%>
 });
 </script>
 <%- include("common-footer"); %>

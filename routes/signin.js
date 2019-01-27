@@ -7,5 +7,12 @@ console.log("send signin.ejs");
 });
 
 
+// サインイン処理
+router.post('/', function(req, res) {
+console.log("send signin AddUser : " + req.body.uid + "<>" + req.body.upass);
+	res.render('signin', { msg: "まだ実装中です。" });
+});
+
+
 module.exports = router;
 

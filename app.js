@@ -43,16 +43,13 @@ app.set('view engine', 'ejs');
 var index = require('./routes/index');
 var login = require('./routes/login');
 var signin = require('./routes/signin');
-var signinAddUser = require('./routes/signin-add-user');
 var mypage = require('./routes/mypage');
 
 // Controllerのセット
 app.use('/', index);
 app.use('/login', login);
 app.use('/signin', signin);
-app.use('/signin-add-user', signinAddUser);
 app.use('/mypage', mypage);
-
 
 
 // 静的ファイルの場所指定
